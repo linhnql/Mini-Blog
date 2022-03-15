@@ -1,0 +1,392 @@
+swagger: '2.0'
+info:
+  description: Mini Blog
+  version: 1.0.0
+  title: Diệp Đằng
+host: 'localhost:8080'
+basePath: /final/blog/v1
+schemes:
+  - "https"
+  - "http"
+
+paths:
+  '/blogs':
+    parameters:
+      - $ref: '#/parameters/Request-Context'
+    get:
+      tags:
+        - Blog
+      summary: get all blog
+      operationId: getAllBlogs
+      parameters:
+        - $ref: '#/parameters/Page'
+        - $ref: '#/parameters/PageSize'
+      responses:
+        200:
+          $ref: '#/responses/Blogs'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+    post:
+      tags:
+        - Blog
+      summary: add a blog
+      operationId: addBlog
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/BlogRequest'
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+  '/blogs/{id}':
+    parameters:
+      - $ref: '#/parameters/Request-Context'
+      - $ref: '#/parameters/BlogId'
+    get:
+      tags:
+        - Blog
+      summary: get blog by ID
+      operationId: getBlogById
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+    put:
+      tags:
+        - Blog
+      summary: update blog by ID
+      operationId: updateBlogById
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/BlogRequest'
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+    delete:
+      tags:
+        - Blog
+      summary: delete blog by ID
+      operationId: deleteBlogById
+      responses:
+        200:
+          $ref: '#/responses/Blog'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+
+  '/contacts':
+    parameters:
+      - $ref: '#/parameters/Request-Context'
+    get:
+      tags:
+        - Contact
+      summary: get all contacts
+      operationId: getAllContacts
+      parameters:
+        - $ref: '#/parameters/Page'
+        - $ref: '#/parameters/PageSize'
+      responses:
+        200:
+          $ref: '#/responses/Contacts'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+    post:
+      tags:
+        - Contact
+      summary: add a contact
+      operationId: addContact
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/ContactRequest'
+      responses:
+        200:
+          $ref: '#/responses/Contact'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+  '/contacts/{contactId}':
+    parameters:
+      - $ref: '#/parameters/Request-Context'
+      - $ref: '#/parameters/ContactId'
+    get:
+      tags:
+        - Contact
+      summary: get contact by ID
+      operationId: getContactById
+      responses:
+        200:
+          $ref: '#/responses/Contact'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+    delete:
+      tags:
+        - Contact
+      summary: delete contact by ID
+      operationId: deleteContactById
+      responses:
+        200:
+          $ref: '#/responses/Contact'
+        201:
+          $ref: '#/responses/Created'
+        401:
+          $ref: '#/responses/NoAuthorized'
+        403:
+          $ref: '#/responses/Forbidden'
+        404:
+          $ref: '#/responses/NotFound'
+      security:
+        - ApiKeyAuth: []
+
+definitions:
+  Blog:
+    type: object
+    properties:
+      id:
+        type: string
+      category:
+        type: string
+        enum: ["ART", "MUSIC", "TECH", "TRAVEL"]
+        example: 'ART'
+      title:
+        type: string
+      image:
+        type: string
+        format: url
+        example: 'https://google.com'
+      intro:
+        type: string
+        example: 'text introduce blog'
+      detail:
+        type: string
+        example: 'detail of blog'
+      createdAt:
+        type: string
+        format: date-time
+        example: '2017-07-21T17:32:28Z'
+  Blogs:
+    type: array
+    items:
+      $ref: '#/definitions/Blog'
+  BlogRequest:
+    type: object
+    properties:
+      category:
+        type: string
+        enum: ["ART", "MUSIC", "TECH", "TRAVEL"]
+        example: 'ART'
+      title:
+        type: string
+      image:
+        type: string
+        format: url
+        example: 'https://google.com'
+      intro:
+        type: string
+        example: 'text introduce blog'
+      detail:
+        type: string
+        example: 'detail of blog'
+    title: BlogRequest
+    required:
+      - category
+      - title
+      - detail
+
+  Contact:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+        format: email
+        example: 'abcyz@gmail.com'
+      messenger:
+        type: string
+      sentAt:
+        type: string
+        format: date-time
+        example: '2017-07-21T17:32:28Z'
+  Contacts:
+    type: array
+    items:
+      $ref: '#/definitions/Contact'
+  ContactRequest:
+    type: object
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+        format: email
+        example: 'abcxyz@gmail.com'
+      messenger:
+        type: string
+    required:
+      - name
+      - email
+      - messenger
+
+responses:
+  Blog:
+    description: 'Blog Response'
+    schema:
+      $ref: '#/definitions/Blog'
+  Blogs:
+    description: 'Blogs Response'
+    schema:
+      $ref: '#/definitions/Blogs'
+  Contact:
+    description: 'Contact Response'
+    schema:
+      $ref: '#/definitions/Contact'
+  Contacts:
+    description: 'Contacts Response'
+    schema:
+      $ref: '#/definitions/Contacts'
+
+  OK:
+    description: '200: OK'
+  Created:
+    description: '201: Created'
+  Accepted:
+    description: '202: Accepted'
+  NoContent:
+    description: '204: NoContent'
+  BadRequest:
+    description: '400: Bad Request'
+  NoAuthorized:
+    description: '401: No Authorized'
+  Forbidden:
+    description: '403: Forbidden'
+  NotFound:
+    description: '404: Not Found'
+  InternalServerError:
+    description: '500: Internal Server Error'
+parameters:
+  Request-Context:
+    name: Request-Context
+    in: header
+    description: Request context
+    required: true
+    type: string
+  BlogId:
+    name: id
+    in: path
+    description: Blog ID
+    required: true
+    type: string
+  ContactId:
+    name: contactId
+    in: path
+    description: Contact ID
+    required: true
+    type: string
+  Page:
+    name: page
+    in: query
+    description: Page
+    type: integer
+    required: false
+  PageSize:
+    name: pageSize
+    in: query
+    description: Page Size
+    type: integer
+    required: false
+securityDefinitions:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: apikey
+    description: Authentication key
