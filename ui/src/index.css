@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0eff0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.btn-react {
+  background: transparent;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 20px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 100px;
+} 
+
+.btn-react {
+  border: 2px solid #e7e7e7;
+}
+ 
+.btn-react:active,
+.btn-react:focus,
+.btn-react:visited {
+  outline: none;
+}
+
+.btn-yes{
+  background-color:rgb(217,83,79)
+}
+
+.btn-no{
+  background-color: rgb(92,184,93);
+}

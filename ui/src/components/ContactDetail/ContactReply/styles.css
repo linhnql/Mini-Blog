@@ -1,0 +1,79 @@
+input[type=email], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    font-size: 1rem;
+}
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+span{
+    color: red;
+}
+  
+input[type=submit], .back {
+    background-color: #909090;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    font-size: 1.4rem;
+    margin-top: 0.5em;
+    text-decoration: none;
+}
+
+input[type=submit]:hover, .back:hover{
+    color:rgb(0, 0, 0)
+}
+
+input[type=submit]:focus, .back:focus{
+    background-color: #686868;
+}
+
+.back{
+    position: absolute;
+    margin-left: 9vw;
+}
+  
+.container {
+    width: 64%;
+    float:right;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    margin: 16vh 9vw -5em 0;
+    font-size: 1.2rem;
+}
+  
+.col-25 {
+    float: left;
+    width:14%;
+    margin-top: 10px;
+}
+  
+.col-75 {
+    float: left;
+    width: 85%;
+    margin-top: 6px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,58 @@
+.info{
+    margin-left: 9vw;
+    padding-top: 16.5vh;
+    position: fixed;
+    width: 14%;
+    
+    &__body{
+        padding: 2em;
+        border-radius: 20px !important;
+        width: 100%;
+        background-color: #fff;
+        &--featured{
+            font-size: 1.1em;
+        }
+ 
+        &--post, &--social{
+            color: rgb(192,184,178);
+            a{
+                padding: 0em 0.7em 5em 0;
+                font-size: 1.5em;
+                color: rgb(192,184,178);
+            }
+        }
+ 
+        &--image{
+            width: 90%;
+            height: 180px;
+            background-image: url(https://images01.nicepage.com/c461c07a441a5d220e8feb1a/24c300c9627254aabe43dd21/fsr.jpg);
+            margin: 0 auto 0 10px;
+            border-radius: 50% !important;
+            display: block;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+
+        p{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;  
+             overflow: hidden;
+        } 
+    }
+}
+
+.hr {
+    border-top: 1px solid #afaaaa;
+    width:50%;
+    margin-left: 0px;
+}
+
+@media screen and (max-width: 950px) {
+    .info {
+        display: none;
+    }
+}

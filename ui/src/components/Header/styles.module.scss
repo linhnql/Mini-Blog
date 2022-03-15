@@ -1,0 +1,34 @@
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    height: 12vh;
+    background-color: #fff;
+    position: fixed;
+    width: 100vw;
+
+    &__name{
+        margin-top: 4vh;
+        width:50px;
+        margin-left: 9vw;
+        font-size: 30px;
+        font-weight: 500;
+        text-decoration: none;
+        color:#000000;
+    }
+
+    &__choice{
+        list-style-type: none;
+        margin-top: 5vh;
+        display: flex;
+        float: right;
+        margin-right: 18%;
+
+        &__act{
+            padding-right: 1vw;
+            font-size: 20px;
+            text-decoration: none;
+            color:#000000;
+        }
+    }
+}

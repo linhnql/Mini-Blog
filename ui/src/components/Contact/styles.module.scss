@@ -1,0 +1,71 @@
+.contact{
+    width: 62%;
+    height: 22.5vmin;
+    float: right;
+    margin: 16.5vh 10vw -12vh 0;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &__body{
+        margin: 1em 3em 3em 4em;
+
+        &__info, &__detail, &__email{
+            color: rgb(192,184,178);
+            font-size: 1.2rem;
+        }
+
+        &__info{
+            float: right;
+        }
+        
+        &__info, &__title{
+            margin-top: 0.3em;
+            margin-bottom: 1em;
+        }
+
+        &__title{
+            font-size: 2em;
+            text-decoration: none;
+            color: black;
+        }
+
+        &__read{
+            padding-top: 1em;
+            &__btn{
+                color: rgb(143, 130, 120);
+            }
+        }
+
+        &__detail{
+            margin-top: 0.7em;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;  
+            overflow: hidden;
+        }
+    }
+}
+
+
+@media only screen and (min-width : 1200px) {
+    .contact {
+        clear: both;
+    }
+}
+
+
+// .button{
+//     padding: 10px 25px;
+//     border-radius: 10px;
+//     font-size: 1.2rem;
+//     cursor: pointer;
+//     position: fixed;
+//     right: 0;
+//     bottom: 0;
+//     margin: 1.5em 3em;
+//     // float: right;
+//     width: 10px;
+//     height: 2em;
+//     background-image: url(add-button.png);
+//     background-size: cover;
+// }

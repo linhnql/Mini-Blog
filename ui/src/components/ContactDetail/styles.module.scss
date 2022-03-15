@@ -1,0 +1,143 @@
+.detail{
+    width: 62%;
+    float: right;
+    margin: 16.5vh 10vw 8vh 0;
+    // margin-right: 5.5em;
+    background-color: #fff;
+    border-radius: 20px;
+    
+    img{
+        width: 100%; 
+        height: 370px; 
+        border-radius: 20px 20px 0 0;
+        object-fit: cover; 
+        // object-position: 0 5%;
+    }
+
+    &__body{
+        margin: 1.5em 3em;
+
+        &__info{
+            color: rgb(192,184,178);
+        }
+        &__header1{
+            font-size: 40px;
+        }
+
+        &__header2{
+            font-size: 30px;
+        }
+
+        p{
+            font-size: 1.2rem;
+        }
+
+        &__last-text{
+            margin-bottom: 3rem;
+        }
+        
+        &__touch{
+            position:absolute;
+            padding: 10px 20px;
+            background-color: #969696;
+            border-radius: 10px;
+            font-size: 30px;
+            font-weight: 450;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 3em;
+            margin-left: -1.6em;
+        }
+
+        &__touch:hover{
+            color: #000;
+        }
+
+        &__touch:focus{
+            background-color: #686868;
+        }
+    }
+}
+
+hr{
+    border-top: 1px solid #afaaaa;
+    width: 15%;
+    margin-left: 0px;
+}
+
+.btn{
+    padding: 10px 25px;
+    background-color: #969696;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    // margin: 2em 23em;
+    // position: fixed;
+    margin-right: 3em;
+    width: 10px;
+    height: 2em;
+}
+
+.delete{
+    float: right;
+    margin-bottom: 1em;
+    background-color: #969696;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 550;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 1;
+    background-color: rgba(97, 97, 97, 0.363);
+
+    display: flex;
+    justify-content: center;
+}
+
+.popup {
+    position: fixed;
+    z-index: 2;
+    top: 30%;
+    left: 35%;
+
+    background-color: rgb(255, 255, 255);
+
+    width: 30%;
+    height:220px;
+    padding: 20px 30px;
+    border-radius: 10px;
+
+    text-align: center;
+
+    &_title {
+        display: block;
+        margin-top: 20px;
+        font-size: 1.5em;
+    }
+
+    &_btn {
+        display: flex;
+        justify-content: space-around;
+
+        margin: 0 50px;
+    }
+}
+  

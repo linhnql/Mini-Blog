@@ -1,0 +1,51 @@
+.about{
+    width: 62%;
+    float: right;
+    margin-top: 16.5vh;
+    margin-right: 10vw;
+    background-color: #fff;
+    border-radius: 10px;
+    
+    &__body{
+        margin: 1.5em 3em;
+
+        &__header1{
+            font-size: 40px;
+        }
+
+        &__header2{
+            font-size: 30px;
+        }
+
+        p{
+            font-size: 1.2rem;
+        }
+
+        &__last-text{
+            margin-bottom: 3rem;
+        }
+        
+        &__touch{
+            padding: 11px 25px;
+            background-color: #969696;
+            border-radius: 10px;
+            font-size: 1.8rem;
+            font-weight: 450;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        &__touch:hover{
+            color: #000;
+        }
+
+        &__touch:focus{
+            background-color: #bbbbbb;
+        }
+
+        &__hide{
+            margin-top: 7px;
+            color: #fff;
+        }
+    }
+}
